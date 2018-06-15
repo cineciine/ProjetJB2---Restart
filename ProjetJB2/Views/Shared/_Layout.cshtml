@@ -20,6 +20,8 @@
                 </button>
                 @Html.ActionLink("OSP", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
+			
+			<!--Menu-->
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Projects", "Index", "Project", new { area = "" }, null)</li>
@@ -29,7 +31,12 @@
                     <li>@Html.ActionLink("Steps", "Index", "Step", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Teachers", "Index", "Teacher", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Help", "Index", "Help", new { area = "" }, null)</li>
-                    <li style="top:12px; left:300px;    ">@using (Html.BeginForm("Index", "Project", FormMethod.Get)){@Html.TextBox("SearchString")<input type = "submit" value = "Search" />}</li>
+                    
+					<!--Barre de recherche-->					
+					<li style="top:12px; left:300px;">
+						@using (Html.BeginForm("Index", "Project", FormMethod.Get)){@Html.TextBox("SearchString")
+						<input type = "submit" value = "Search" />}
+					</li>
                 </ul>
             </div>
         </div>
