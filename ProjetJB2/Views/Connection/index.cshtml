@@ -6,10 +6,22 @@
 <!--Formulaire de Connexion-->
 <form method="post">
 	<!--Login-->
-	<input id="login" name="login" class="form-control" type="text" placeholder="Login" required />
+	<div class="form-group input-group">
+		<span class="input-group-addon">
+			<span class="glyphicon glyphicon-user"></span>
+		</span>
+		<input id="login" name="login" class="form-control" type="text" placeholder="Login" required />
+	</div>
+
 	<!--Mot de Passe-->
-	<input id="password" name="password" class="form-control" type="password" placeholder="Password" required />
+	<div class="form-group input-group">
+		<span class="input-group-addon">
+			<span class="glyphicon glyphicon-asterisk"></span>
+		</span>
+		<input id="password" name="password" class="form-control" type="password" placeholder="Password" required />
+	</div>
+
 	<!--Bouton de Connexion-->
-	<input class="btn btn-info btn-circle btn-lg" type="submit" value="Connection"/>
+	<input class="btn btn-info btn-circle btn-lg" type="submit" value="Connection" />
 </form>
 
