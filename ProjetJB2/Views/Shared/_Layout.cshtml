@@ -34,7 +34,7 @@
                     
 					<!--Barre de recherche-->					
 					<li style="top:12px; left:300px;">
-						@using (Html.BeginForm("Index", "Project", FormMethod.Get)){@Html.TextBox("SearchString")
+						@using (Html.BeginForm("Index", "Project", FormMethod.Get)){@Html.TextBox("SearchString", null, new { @placeholder = "enter name or description" })
 						<input type = "submit" value = "Search" />}
 					</li>
                 </ul>
