@@ -42,12 +42,11 @@ namespace ProjetJB2.Migrations
             projects.ForEach(p => context.Projects.Add(p));
             context.SaveChanges();
 
-            var tasks = new List<Task>
+            var Groups = new List<Group>
             {
-                new Task{ Id = 1, Description ="Coder la page d'authentification", BeginDate=DateTime.Now.Date, EndDate=DateTime.Now.Date.AddDays(1), State=true, ProjectId=1, StudentId=2},
-                new Task{ Id = 2, Description ="Coder les fonctionnalités de l'API", BeginDate=DateTime.Now.Date, EndDate=DateTime.Now.Date.AddDays(7), State =true, ProjectId=1, StudentId = 1}
+            new Group{Id=1, NumGroup=1, ProjectId=1, StudentId=1,},
             };
-            tasks.ForEach(t => context.Tasks.Add(t));
+            Groups.ForEach(s => context.Groups.Add(s));
             context.SaveChanges();
 
             var steps = new List<Step>
@@ -58,12 +57,17 @@ namespace ProjetJB2.Migrations
             steps.ForEach(st => context.Steps.Add(st));
             context.SaveChanges();
 
-            var Groups = new List<Group>
+
+            var tasks = new List<Task>
             {
-            new Group{GroupId=1, NumGroup=1, ProjectId=1, StudentId=1,},
+                new Task{ Id = 1, Description ="Coder la page d'authentification", BeginDate=DateTime.Now.Date, EndDate=DateTime.Now.Date.AddDays(1), State=true, ProjectId=1, StudentId=2, StepId = 1},
+                new Task{ Id = 2, Description ="Coder les fonctionnalités de l'API", BeginDate=DateTime.Now.Date, EndDate=DateTime.Now.Date.AddDays(7), State =true, ProjectId=1, StudentId = 1, StepId = 2}
             };
-            Groups.ForEach(s => context.Groups.Add(s));
+            tasks.ForEach(t => context.Tasks.Add(t));
             context.SaveChanges();
+
+            
+            
         }
 
     }

@@ -3,7 +3,7 @@ namespace ProjetJB2.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initial : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
@@ -11,12 +11,12 @@ namespace ProjetJB2.Migrations
                 "dbo.Groups",
                 c => new
                     {
-                        GroupId = c.Int(nullable: false, identity: true),
+                        Id = c.Int(nullable: false, identity: true),
                         NumGroup = c.Int(nullable: false),
                         ProjectId = c.Int(),
                         StudentId = c.Int(),
                     })
-                .PrimaryKey(t => t.GroupId)
+                .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Projects", t => t.ProjectId)
                 .ForeignKey("dbo.Students", t => t.StudentId)
                 .Index(t => t.ProjectId)
@@ -88,23 +88,28 @@ namespace ProjetJB2.Migrations
                         State = c.Boolean(nullable: false),
                         ProjectId = c.Int(),
                         StudentId = c.Int(),
+                        StepId = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Projects", t => t.ProjectId)
+                .ForeignKey("dbo.Steps", t => t.StepId)
                 .ForeignKey("dbo.Students", t => t.StudentId)
                 .Index(t => t.ProjectId)
-                .Index(t => t.StudentId);
+                .Index(t => t.StudentId)
+                .Index(t => t.StepId);
             
         }
         
         public override void Down()
         {
             DropForeignKey("dbo.Tasks", "StudentId", "dbo.Students");
+            DropForeignKey("dbo.Tasks", "StepId", "dbo.Steps");
             DropForeignKey("dbo.Tasks", "ProjectId", "dbo.Projects");
             DropForeignKey("dbo.Steps", "ProjectId", "dbo.Projects");
             DropForeignKey("dbo.Groups", "StudentId", "dbo.Students");
             DropForeignKey("dbo.Groups", "ProjectId", "dbo.Projects");
             DropForeignKey("dbo.Projects", "TeacherId", "dbo.Teachers");
+            DropIndex("dbo.Tasks", new[] { "StepId" });
             DropIndex("dbo.Tasks", new[] { "StudentId" });
             DropIndex("dbo.Tasks", new[] { "ProjectId" });
             DropIndex("dbo.Steps", new[] { "ProjectId" });

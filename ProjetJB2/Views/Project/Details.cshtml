@@ -50,6 +50,17 @@
             @Html.DisplayFor(model => model.EndDate)
         </dd>
 
+
+        <dt>
+            @Html.ActionLink("Steps detail", "Index", "Step", new { id = Model.Id }, null)
+        </dt>
+
+        <dd></dd>
+
+        <dt>
+            @Html.ActionLink("Tasks detail", "Index", "Task", new { id = Model.Id }, null)
+        </dt>
+
     </dl>
 </div>
 <p>

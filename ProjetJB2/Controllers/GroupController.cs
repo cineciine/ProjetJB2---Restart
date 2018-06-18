@@ -50,7 +50,7 @@ namespace ProjetJB2.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "GroupId,NumGroup,ProjectId,StudentId")] Group group)
+        public async Task<ActionResult> Create([Bind(Include = "Id,NumGroup,ProjectId,StudentId")] Group group)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace ProjetJB2.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "GroupId,NumGroup,ProjectId,StudentId")] Group group)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,NumGroup,ProjectId,StudentId")] Group group)
         {
             if (ModelState.IsValid)
             {

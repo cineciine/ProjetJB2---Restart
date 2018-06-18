@@ -9,7 +9,7 @@ namespace ProjetJB2.Models
 {
     public class Group
     {
-        public int GroupId { get; set; }
+        public int Id { get; set; }
         public int NumGroup { get; set; }
         public Nullable<int> ProjectId { get; set; }
         public virtual Project Project { get; set; }
