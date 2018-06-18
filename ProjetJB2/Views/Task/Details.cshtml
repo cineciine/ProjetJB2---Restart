@@ -1,13 +1,12 @@
 ﻿@model ProjetJB2.Models.Task
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "OSP - Details Task";
 }
 
-<h2>Details</h2>
+<h1>Details Task</h1>
 
 <div>
-    <h4>Task</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -61,6 +60,6 @@
     </dl>
 </div>
 <p>
-	@Html.ActionLink("Back to List", "Index")
-	@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+	@Html.ActionLink("Back to List", "Index", new { id = "backList" }, new { @class = "btn btn-danger" })
+	@Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-success" })
 </p>
