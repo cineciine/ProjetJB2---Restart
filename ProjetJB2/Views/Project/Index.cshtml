@@ -51,42 +51,10 @@
 				@Html.DisplayFor(modelItem => item.EndDate)
 			</td>
 			<td>
-				<!--<div class="list-group">
-		<a class="list-group-item">
-			<i class="fa fa-tasks fa-fw">::before</i>
-			New Task
-		</a>
-	</div>-->
-				<!--
-	<div class="col-lg-3 col-md-6">
-		<div class="panel panel-green">
-			<div class="panel-heading">
-				<div class="row">
-					<div class="col-xs-3">
-						<i class="fa fa-tasks fa-5x"></i>
-					</div>
-					<div class="col-xs-9 text-right">
-						<div class="huge">
-							Nombre de Notification
-						</div>
-						<div>New Tasks!</div>
-					</div>
-				</div>
-			</div>
-			<a href="#">
-				<div class="panel-footer">
-					<span class="pull-left">View Details</span>
-					<span class="pull-right">
-						<i class="fa fa-arrow-circle-right"></i>
-					</span>
-					<span class="clearfix"></span>
-				</div>
-			</a>
-		</div>
-	</div>
-				-->
+				<!--Boutons d'Actions-->
 				@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-success" })
 				@Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary" })
+				@Html.ActionLink("Archived", "Archived", new { id = item.Id }, new { @class = "btn btn-warning" })
 				@Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
 			</td>
 		</tr>
