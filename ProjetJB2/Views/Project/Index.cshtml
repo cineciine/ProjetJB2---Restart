@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<ProjetJB2.Models.Project>
 
 @{
-	ViewBag.Title = "Index";
+	ViewBag.Title = "OSP - Project";
 }
 
-<h2>Index</h2>
+<h1 class="page-header">Project</h1>
 
 <!--Bouton de Création-->
 <p>
@@ -85,9 +85,9 @@
 		</div>
 	</div>
 				-->
-				@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-				@Html.ActionLink("Details", "Details", new { id = item.Id }) |
-				@Html.ActionLink("Delete", "Delete", new { id = item.Id })
+				@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-success" })
+				@Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary" })
+				@Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
 			</td>
 		</tr>
 	}
