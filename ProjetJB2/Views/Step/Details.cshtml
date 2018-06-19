@@ -8,6 +8,7 @@
 
 <div>
 	<hr />
+	<!--Affichage des informations-->
 	<dl class="dl-horizontal">
 		<dt>
 			@Html.DisplayNameFor(model => model.Project.Name)
@@ -41,8 +42,20 @@
 			@Html.DisplayFor(model => model.EndDate)
 		</dd>
 
+		<dt>
+			File
+		</dt>
+
+		<dd>
+			<!--Nom du Fichier-->
+			@Html.DisplayFor(model => model.Description) <!--Cette ligne est à changer-->
+
+			<!--Bouton de Téléchargement-->
+			<button class="btn btn-info">Download</button>
+		</dd>
 	</dl>
 
+	<!--Formulaire d'Upload de Fichier-->
 	<form method="post" enctype="multipart/form-data" asp-controller="UploadFiles" asp-action="Index">
 		<div class="form-group">
 			<input class="btn btn-default" type="file" name="files" />		
