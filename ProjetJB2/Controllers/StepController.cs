@@ -129,5 +129,17 @@ namespace ProjetJB2.Controllers
             }
             base.Dispose(disposing);
         }
-    }
+
+		/*Upload des Fichiers*/
+		public void UploadFile()
+		{
+			Console.WriteLine("Test");
+		}
+
+		/*Download des Fichiers*/
+		public void DownloadFile()
+		{
+
+		}
+	}
 }
