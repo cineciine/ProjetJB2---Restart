@@ -110,6 +110,10 @@ namespace ProjetJB2.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Teacher teacher = db.Teachers.Find(id);
+            foreach (var project in db.Projects.Where(p => p.TeacherId == id))
+            {
+                db.Projects.Remove(project);
+            }
             db.Teachers.Remove(teacher);
             db.SaveChanges();
             return RedirectToAction("Index");

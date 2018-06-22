@@ -1,16 +1,20 @@
 ﻿using System;
-
+using System.ComponentModel;
 
 namespace ProjetJB2.Models
 {
     public class Project
     {
         public int Id { get; set; }
+        [DisplayName("Title")]
         public String Name { get; set; }
         public String Description { get; set; }
-        public Nullable<int> TeacherId { get; set; } 
+        [DisplayName("Teacher")]
+        public Nullable<int> TeacherId { get; set; }
         public virtual Teacher Teacher { get; set; }
+        [DisplayName("Starting date")]
         public DateTime BeginDate { get; set; }
+        [DisplayName("Ending date")]
         public DateTime EndDate { get; set; }
-}
+    }
 }

@@ -32,12 +32,17 @@ namespace ProjetJB2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            
             Project project = await db.Projects.FindAsync(id);
             if (project == null)
             {
                 return HttpNotFound();
             }
-            return View(project);
+            //GERER LES DATES PASSEES
+            var task = db.Tasks.Where(x => x.Project.Id == id && x.EndDate > DateTime.Now).OrderBy(x => x.EndDate).FirstOrDefault();            
+            var step = db.Steps.Where(x => x.Project.Id == id && x.EndDate > DateTime.Now).OrderBy(x => x.EndDate).FirstOrDefault();
+            ProjectStepTask projectsteptask = new ProjectStepTask(project, step, task);
+            return View(projectsteptask);
         }
 
         // GET: Project/Create
@@ -119,6 +124,19 @@ namespace ProjetJB2.Controllers
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
             Project project = await db.Projects.FindAsync(id);
+            foreach (var group in db.Groups.Where(g => g.ProjectId == id))
+            {
+                db.Groups.Remove(group);
+            }
+            foreach (var step in db.Steps.Where(s => s.ProjectId == id))
+            {
+                db.Steps.Remove(step);
+            }
+            foreach (var task in db.Tasks.Where(t => t.ProjectId == id))
+            {
+                db.Tasks.Remove(task);
+            }
+            db.SaveChanges();
             db.Projects.Remove(project);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
