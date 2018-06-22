@@ -2,6 +2,12 @@
 
 @{
 	ViewBag.Title = "Login";
+
+	Layout = null;
+
+	<!--CSS-->
+	@Styles.Render("~/Content/css")
+	@Scripts.Render("~/bundles/modernizr")
 }
 
 <div class="container">
@@ -28,13 +34,13 @@
 									<span class="glyphicon glyphicon-asterisk"></span>
 								</span>
 								@Html.PasswordFor(model => model.Password, new { @class = "form-control", placeholder = "Password", required = "required" })
-								@Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })								
+								@Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
 							</div>
 
 							<!--Statut de l'utilisateur (Enseignant/Etudiant)-->
 							<div class="form-group">
 								<label class="radio-inline">
-									<input id="statStud" name="stat" value="Student" type="radio" checked="" />									
+									<input id="statStud" name="stat" value="Student" type="radio" checked="" />
 									Student
 								</label>
 								<label class="radio-inline">
@@ -52,3 +58,7 @@
 		</div>
 	</div>
 </div>
+
+<!--JavaScript-->
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")

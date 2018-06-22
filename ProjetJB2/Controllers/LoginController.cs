@@ -15,36 +15,37 @@ namespace ProjetJB2.Controllers
 		}
 
 		/*Méthode de Connexion*/
-		public ActionResult signIn(string login, string password, string stat)
+		[HttpPost]
+		public ActionResult SignIn(string login, string password, string stat)
 		{
 			Console.WriteLine(login, password, stat);
 
-			string motDePasseEncode = "";//EncodeMD5(motDePasse);
-										 //return .Utilisateurs.FirstOrDefault(u => u.Prenom == nom && u.MotDePasse == motDePasseEncode);
-										 /*if(login != "" && password != "")	//Vérification que les variables ne soient pas vides
-										 {
-											 if (stat == "Student") {	//Contrôle du statut (Etudiant/Enseignant)
+			//string motDePasseEncode = EncodeMD5(motDePasse);
+			//return .Utilisateurs.FirstOrDefault(u => u.Prenom == nom && u.MotDePasse == motDePasseEncode);
+			/*if(login != "" && password != "")	//Vérification que les variables ne soient pas vides
+			{
+				if (stat == "Student") {	//Contrôle du statut (Etudiant/Enseignant)
 
-											 }
-											 else {	//Statut == "Teacher"
+				}
+				else {	//Statut == "Teacher"
 
-											 }
+				}
 
-											 foreach()	//Parcours des données
-											 {
-												 if() {	//Comparaison entre les données et les informations saisies
-												 }
-												 else {
-													 //Message d'Erreur
-												 }
-											 }
+				foreach()	//Parcours des données
+				{
+					if() {	//Comparaison entre les données et les informations saisies
+					}
+					else {
+						//Message d'Erreur
+					}
+				}
 
-										 }*/
+			}*/
 			return RedirectToAction("Index");
 		}
 
 		/*Méthode de Déconnexion*/
-		public ActionResult signOut()
+		public ActionResult SignOut()
 		{
 			return RedirectToAction("Index");
 		}
