@@ -50,12 +50,16 @@
 			<!--Nom du Fichier-->
 			@Html.DisplayFor(model => model.Description) <!--Cette ligne est à changer-->
 			<!--Bouton de Téléchargement-->
-			<button class="btn btn-info">Download</button>
+			@using (Html.BeginForm("DownloadFile", "Step", FormMethod.Post))
+			{
+				<button class="btn btn-info">Download</button>
+			}
 		</dd>
 	</dl>
 
 	<!--Formulaire d'Upload de Fichier-->
-	<form method="post" enctype="multipart/form-data" asp-controller="StepController" asp-action="UploadFile">
+	@using (Html.BeginForm("UploadFile", "Step", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+	{
 		<div class="form-group">
 			<label for="file">Select Send File(.pdf)</label>
 			<input class="btn btn-default" type="file" accept=".pdf" id="file" name="file" />
@@ -63,7 +67,8 @@
 		<div class="form-group">
 			<input class="btn btn-info" type="submit" value="Upload" />
 		</div>
-	</form>
+	}
+	
 </div>
 
 <p>

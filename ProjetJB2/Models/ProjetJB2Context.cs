@@ -25,5 +25,6 @@ namespace ProjetJB2.Models
         public System.Data.Entity.DbSet<ProjetJB2.Models.Task> Tasks { get; set; }
         public System.Data.Entity.DbSet<ProjetJB2.Models.Step> Steps { get; set; }
         public System.Data.Entity.DbSet<ProjetJB2.Models.Group> Groups { get; set; }
-    }
+		//public System.Data.Entity.DbSet<ProjetJB2.Models.Files> Files { get; set; }
+	}
 }

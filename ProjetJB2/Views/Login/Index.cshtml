@@ -15,7 +15,7 @@
 		<div class="col-md-4 col-md-offset-4">
 			<div class="login-panel panel panel-default">
 				<div class="panel-body">
-					@using (Html.BeginForm())
+					@using (Html.BeginForm("SignIn", "Login", FormMethod.Post))
 					{
 						<fieldset>
 							<!--Formulaire de Connexion-->
@@ -31,7 +31,7 @@
 							<!--Mot de Passe-->
 							<div class="form-group input-group">
 								<span class="input-group-addon">
-									<span class="glyphicon glyphicon-asterisk"></span>
+									<span class="glyphicon glyphicon-lock"></span>
 								</span>
 								@Html.PasswordFor(model => model.Password, new { @class = "form-control", placeholder = "Password", required = "required" })
 								@Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })

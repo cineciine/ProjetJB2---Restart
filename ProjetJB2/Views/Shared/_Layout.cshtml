@@ -25,22 +25,24 @@
 			
 			<!--Menu-->
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Projects", "Index", "Project", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("Students", "Index", "Student", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("Groups", "Index", "Group", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("Tasks", "Index", "Task", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("Steps", "Index", "Step", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("Teachers", "Index", "Teacher", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("Help", "Index", "Help", new { area = "" }, null)</li>
-                    
-					<!--Barre de recherche-->					
+				<ul class="nav navbar-nav">
+					<li>@Html.ActionLink("Projects", "Index", "Project", new { area = "" }, null)</li>
+					<li>@Html.ActionLink("Students", "Index", "Student", new { area = "" }, null)</li>
+					<li>@Html.ActionLink("Groups", "Index", "Group", new { area = "" }, null)</li>
+					<li>@Html.ActionLink("Tasks", "Index", "Task", new { area = "" }, null)</li>
+					<li>@Html.ActionLink("Steps", "Index", "Step", new { area = "" }, null)</li>
+					<li>@Html.ActionLink("Teachers", "Index", "Teacher", new { area = "" }, null)</li>
+					<li>@Html.ActionLink("Help", "Index", "Help", new { area = "" }, null)</li>
+					<li>@Html.ActionLink("Sign Out", "SignOut", "Login", new { area = "" }, null)</li>
+
+					<!--Barre de recherche-->
 					<li style="top:12px; left:300px;">
-						@using (Html.BeginForm("Index", "Project", FormMethod.Get)){@Html.TextBox("SearchString", null, new { @class= "form-control", placeholder = "Enter Name or Description" })
-						
-						<input type = "submit" value = "Search" />}
+						@using (Html.BeginForm("Index", "Project", FormMethod.Get))
+						{@Html.TextBox("SearchString", null, new { @class = "form-control", placeholder = "Enter Name or Description" })
+
+						<input type="submit" value="Search" />}
 					</li>
-                </ul>
+				</ul>
             </div>
         </div>
     </div>

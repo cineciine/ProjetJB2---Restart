@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using ProjetJB2.Models;
 using System.IO;
+using System.Diagnostics;
 
 namespace ProjetJB2.Controllers
 {
@@ -133,18 +134,22 @@ namespace ProjetJB2.Controllers
 
 		/*Upload des Fichiers*/
 		[HttpPost]
-		public void UploadFile()
-		{
-			Console.WriteLine("Test");
+		public ActionResult UploadFile(HttpPostedFileBase file)
+		{			
+			//Sauvegarde du Fichier dans le dossier Files
+			file.SaveAs("C:\\Users\\Steven\\source\\repos\\ProjetJB2---Restart\\ProjetJB2\\Files\\" + file.FileName);
+
+			//db.Files.Add(file);
+
+			return RedirectToAction("Index");
 		}
 
 		/*Download des Fichiers*/
 		[HttpPost]
-		public void DownloadFile(int? fileId)
+		public ActionResult DownloadFile(int? fileId)
 		{
-			/*FilesEntities entities = new FilesEntities();
-			tblFile file = entities.tblFiles.ToList().Find(p => p.id == fileId.Value);
-			return File(file.Data, file.ContentType, file.Name);*/
+
+			return RedirectToAction("Index");
 		}
 	}
 }
