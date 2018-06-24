@@ -64,7 +64,7 @@
             </td>
         }
 
-                @if (item.Rate != null)
+                @if (item.Rate != null) //Si la note est vide 
             {
                 <td>
                     @Html.ActionLink("Details", "Details", new { id = item.Id }) |

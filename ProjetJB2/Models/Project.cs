@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Foolproof;
+using ProjetJB2.Controllers;
+using System;
 using System.ComponentModel;
 
 namespace ProjetJB2.Models
@@ -15,6 +17,8 @@ namespace ProjetJB2.Models
         [DisplayName("Starting date")]
         public DateTime BeginDate { get; set; }
         [DisplayName("Ending date")]
+        // Classe à parfaire 
+        [GreaterThan("BeginDate")]
         public DateTime EndDate { get; set; }
     }
 }

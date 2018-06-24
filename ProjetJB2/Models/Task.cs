@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Foolproof;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace ProjetJB2.Models
         public String Description { get; set; }
         public DateTime BeginDate { get; set; }
         [DisplayName("Task limit date")]
+        [GreaterThan("BeginDate")]
         public DateTime EndDate { get; set; }
         public Boolean State { get; set; }
         public Nullable<int> ProjectId { get; set; } //Projet auquel la tâche est assignée

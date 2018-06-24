@@ -37,7 +37,7 @@ namespace ProjetJB2.Migrations
 
             var projects = new List<Project>
             {
-                new Project{ Id = 1, Name ="Outil de Suivi de Projet", Description="Les élèves doivent développer une API Web permettant aux professeurs de suivre les projets de groupe.", TeacherId = 1, BeginDate=DateTime.Now.Date, EndDate=new DateTime(2018,6,16) }
+                new Project{ Id = 1, Name ="Outil de Suivi de Projet", Description="Les élèves doivent développer une API Web permettant aux professeurs de suivre les projets de groupe.", TeacherId = 1, BeginDate=DateTime.Now.Date, EndDate=DateTime.Now.Date.AddDays(7) }
             };
             projects.ForEach(p => context.Projects.Add(p));
             context.SaveChanges();
