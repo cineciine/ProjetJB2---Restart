@@ -20,17 +20,17 @@ namespace ProjetJB2.Controllers
         {
             var groups = db.Groups.Include(g => g.Project).Include(g => g.Student);
 
-            List<List<int>> grouplist = new List<List<int>>();
-            List<int> students = new List<int>();
-            for(int i=1;i<db.Groups.Max(g => g.NumGroup); i++) { 
-                foreach(var group in db.Groups.Where(g => g.NumGroup == i){
-                        //students.Add(group.StudentId);
-                       var studentlist = from s in db.Groups
-                                   select s.StudentId;
-                    foreach(var stud in studentlist) { 
-                       students.Add(stud
+            /* List<List<int>> grouplist = new List<List<int>>();
+             List<int> students = new List<int>();
+             for(int i=1;i<db.Groups.Max(g => g.NumGroup); i++) { 
+                 foreach(var group in db.Groups.Where(g => g.NumGroup == i){
+                         //students.Add(group.StudentId);
+                        var studentlist = from s in db.Groups
+                                    select s.StudentId;
+                     foreach(var stud in studentlist) { 
+                        students.Add(stud
 
-                }
+                 }*/
             return View(await groups.ToListAsync());
         }
 

@@ -61,6 +61,8 @@ namespace ProjetJB2.Migrations
             var Groups = new List<Group>
             {
             new Group{Id=1, NumGroup=1, ProjectId=1, StudentId=1,},
+            new Group{Id=1, NumGroup=1, ProjectId=1, StudentId=2,},
+            new Group{Id=1, NumGroup=1, ProjectId=1, StudentId=3,}
             };
             Groups.ForEach(s => context.Groups.Add(s));
             context.SaveChanges();
