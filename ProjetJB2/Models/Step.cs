@@ -13,6 +13,9 @@ namespace ProjetJB2.Models
         public String Description { get; set; }
         public DateTime BeginDate { get; set; }
         public DateTime EndDate { get; set; }
+        [Range(0, 20, ErrorMessage = "The rate must be between 0 and 20")]
+        public Nullable<int> Rate { get; set; }
+        public Boolean Notable { get; set; }
         public Nullable<int> ProjectId { get; set; }
         public virtual Project Project { get; set; }
     }

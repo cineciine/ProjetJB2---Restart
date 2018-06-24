@@ -52,8 +52,8 @@ namespace ProjetJB2.Migrations
 
             var steps = new List<Step>
             {
-                new Step{ Id = 1, Description ="Rendu du cahier des charges", BeginDate = DateTime.Now.Date, EndDate=DateTime.Now.Date.AddDays(2),ProjectId =1},
-                new Step{ Id = 1, Description ="Rendu du rapport de conception final", BeginDate = DateTime.Now.Date, EndDate=DateTime.Now.Date.AddDays(2),ProjectId =1}
+                new Step{ Id = 1, Description ="Rendu du cahier des charges", BeginDate = DateTime.Now.Date, EndDate=DateTime.Now.Date.AddDays(2),ProjectId =1, Notable=true },
+                new Step{ Id = 1, Description ="Rendu du rapport de conception final", BeginDate = DateTime.Now.Date, EndDate=DateTime.Now.Date.AddDays(2),ProjectId =1, Notable=true, Rate=10}
             };
             steps.ForEach(st => context.Steps.Add(st));
             context.SaveChanges();

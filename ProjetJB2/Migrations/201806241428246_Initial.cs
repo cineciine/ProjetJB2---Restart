@@ -71,6 +71,8 @@ namespace ProjetJB2.Migrations
                         Description = c.String(),
                         BeginDate = c.DateTime(nullable: false),
                         EndDate = c.DateTime(nullable: false),
+                        Rate = c.Int(),
+                        Notable = c.Boolean(nullable: false),
                         ProjectId = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)

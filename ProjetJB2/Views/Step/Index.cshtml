@@ -23,6 +23,12 @@
         <th>
             @Html.DisplayNameFor(model => model.EndDate)
         </th>
+        <th>
+            Rated
+        </th>
+        <th>
+            Rate
+        </th>
         <th></th>
     </tr>
 
@@ -41,9 +47,23 @@
             @Html.DisplayFor(modelItem => item.EndDate)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.DisplayFor(modelItem => item.Notable)
+        </td>
+        @if (item.Notable == true)
+        {
+        <td>
+            @Html.DisplayFor(modelItem => item.Rate)/20
+        </td>
+        }
+        else
+        {
+            <td></td>
+        }
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
         </td>
     </tr>
 }
