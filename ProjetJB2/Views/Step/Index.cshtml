@@ -51,35 +51,38 @@
         <td>
             @Html.DisplayFor(modelItem => item.Notable)
         </td>
-        @if (item.Notable == true)
+        @if (item.Notable == true && item.Rate != null)
+    {
+        <td>
+            @Html.DisplayFor(modelItem => item.Rate)/20
+        </td>
+}
+        else if(item.Notable == true && item.Rate == null)
         {
             <td>
-                @Html.DisplayFor(modelItem => item.Rate)/20
+                Pas encore noté
             </td>
         }
         else
         {
-            <td>
-
-            </td>
+            <td></td>
         }
-
-                @if (item.Rate != null) //Si la note est vide 
-            {
-                <td>
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                </td>
+        @if (item.Rate != null) //Si la note est vide
+        {
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
         }
         else
         {
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                </td>
-        }
-    </tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+        </td>
+    }
+        </tr>
 }
 
 </table>
