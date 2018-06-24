@@ -22,6 +22,12 @@ namespace ProjetJB2.Controllers
             return View(await tasks.ToListAsync());
         }
 
+        public ActionResult IndexBis(int id)
+        {
+            var tasks = db.Tasks.Where(t => t.ProjectId == id).Include(t => t.Project);
+            return View(tasks.ToList());
+        }
+
         // GET: Task/Details/5
         public async Task<ActionResult> Details(int? id)
         {

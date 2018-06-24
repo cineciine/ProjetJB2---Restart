@@ -299,6 +299,8 @@
     <Content Include="Views\Step\Details.cshtml" />
     <Content Include="Views\Step\Edit.cshtml" />
     <Content Include="Views\Step\Index.cshtml" />
+    <Content Include="Views\Step\IndexBis.cshtml" />
+    <Content Include="Views\Task\IndexBis.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -21,6 +21,12 @@ namespace ProjetJB2.Controllers
             return View(steps.ToList());
         }
 
+        public ActionResult IndexBis(int id)
+        {
+            var steps = db.Steps.Where(s=> s.ProjectId == id).Include(s => s.Project);
+            return View(steps.ToList());
+        }
+
         // GET: Steps/Details/5
         public ActionResult Details(int? id)
         {
