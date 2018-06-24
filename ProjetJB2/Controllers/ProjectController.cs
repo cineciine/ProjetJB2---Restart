@@ -41,8 +41,20 @@ namespace ProjetJB2.Controllers
             //GERER LES DATES PASSEES
             var task = db.Tasks.Where(x => x.Project.Id == id && x.EndDate > DateTime.Now).OrderBy(x => x.EndDate).FirstOrDefault();            
             var step = db.Steps.Where(x => x.Project.Id == id && x.EndDate > DateTime.Now).OrderBy(x => x.EndDate).FirstOrDefault();
-            ProjectStepTask projectsteptask = new ProjectStepTask(project, step, task);
-            return View(projectsteptask);
+            var students = new List<Student>();
+            var group = db.Groups.Where(x => x.NumGroup == id).ToList();
+            foreach(var g in group)
+            {
+                var studentList = db.Students.Where(x => x.Id == g.StudentId).ToList();
+                foreach(var student in studentList)
+                {
+                    students.Add(student);
+                }
+                
+            }
+                
+            ProjectStepTaskStudentGroup projectsteptaskstudentgroup = new ProjectStepTaskStudentGroup(project, step, task, students, group);
+            return View(projectsteptaskstudentgroup);
         }
 
         // GET: Project/Create

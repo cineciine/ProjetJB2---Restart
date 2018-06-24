@@ -1,4 +1,4 @@
-﻿@model ProjetJB2.Models.ProjectStepTask
+﻿@model ProjetJB2.Models.ProjectStepTaskStudentGroup
 
 @{
     ViewBag.Title = "Details";
@@ -25,7 +25,17 @@
         <dd>
             @Html.DisplayFor(model => model.Project.Description)
         </dd>
-
+        <dt>
+            Students
+        </dt>
+        
+            @foreach (var item in Model.Students)
+        {
+        <dd>
+            @Html.DisplayFor(modelItem => item.LastName)  @Html.DisplayFor(modelItem => item.FirstName)
+        </dd>
+            }
+        
         <dt>
             @Html.DisplayNameFor(model => model.Project.BeginDate)
         </dt>
@@ -57,7 +67,7 @@
             @Html.DisplayFor(model => model.Task.Description) - (Date) : @Html.DisplayFor(model => model.Task.EndDate)
         </dd>
 
-                <dt>
+        <dt>
             @Html.ActionLink("Steps detail", "IndexBis", "Step", new { id = Model.Project.Id }, null)
         </dt>
 

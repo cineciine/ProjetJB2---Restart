@@ -197,14 +197,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806241924446_Initial.cs" />
-    <Compile Include="Migrations\201806241924446_Initial.Designer.cs">
-      <DependentUpon>201806241924446_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201806242326377_Initial.cs" />
+    <Compile Include="Migrations\201806242326377_Initial.Designer.cs">
+      <DependentUpon>201806242326377_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Group.cs" />
     <Compile Include="Models\Project.cs" />
-    <Compile Include="Models\ProjectStepTask.cs" />
+    <Compile Include="Models\ProjectStepTaskStudentGroup.cs" />
     <Compile Include="Models\ProjetJB2Context.cs" />
     <Compile Include="Models\Step.cs" />
     <Compile Include="Models\Student.cs" />
@@ -319,8 +319,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806241924446_Initial.resx">
-      <DependentUpon>201806241924446_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806242326377_Initial.resx">
+      <DependentUpon>201806242326377_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
