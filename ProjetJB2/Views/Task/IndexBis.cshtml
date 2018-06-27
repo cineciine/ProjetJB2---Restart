@@ -4,12 +4,12 @@
     ViewBag.Title = "IndexBis";
 }
 
-<h2>Index</h2>
+<h2>Tasks List</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("New Task", "Create")
 </p>
-<table class="table">
+<table class="table table-striped table-bordered table-hover">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Project.Name)
