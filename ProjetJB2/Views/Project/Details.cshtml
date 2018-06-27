@@ -81,5 +81,5 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Project.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", new { id = "backList" }, new { @class = "btn btn-danger" })
 </p>
