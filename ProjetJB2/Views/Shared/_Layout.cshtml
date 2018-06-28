@@ -29,8 +29,10 @@
                     <li>@Html.ActionLink("Steps", "Index", "Step", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Teachers", "Index", "Teacher", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Help", "Index", "Help", new { area = "" }, null)</li>
-                    <li style="top:12px; left:300px;    ">@using (Html.BeginForm("Index", "Project", FormMethod.Get)){@Html.TextBox("SearchString")<input type = "submit" value = "Search" />}</li>
-                </ul>
+					<li>@Html.ActionLink("Sign Out", "SignOut", "Login", new { area = "" }, null)</li>
+                    <li style="top:12px; left:300px;">@using (Html.BeginForm("Index", "Project", FormMethod.Get)){@Html.TextBox("SearchString")<input type = "submit" value = "Search" />}</li>
+					
+				</ul>
             </div>
         </div>
     </div>

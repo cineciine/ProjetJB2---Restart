@@ -134,5 +134,24 @@ namespace ProjetJB2.Controllers
             }
             base.Dispose(disposing);
         }
+        /*Upload des Fichiers*/
+        [HttpPost]
+        public ActionResult UploadFile(HttpPostedFileBase file)
+        {
+            //Sauvegarde du Fichier dans le dossier Files
+            file.SaveAs("C:\\Users\\yis75\\source\\repos\\ProjetJB2---Restart\\ProjetJB2\\Files\\" + file.FileName);
+
+            //db.Files.Add(file);
+
+            return RedirectToAction("Index");
+        }
+
+        /*Download des Fichiers*/
+        [HttpPost]
+        public ActionResult DownloadFile(int? fileId)
+        {
+
+            return RedirectToAction("Index");
+        }
     }
 }
